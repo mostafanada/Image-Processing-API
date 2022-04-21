@@ -33,7 +33,7 @@ To get started:
 
 #### Test the app
 
-    `npm run test`
+    npm run test
  
 #### Code formating 
 
