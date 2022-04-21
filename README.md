@@ -23,7 +23,7 @@ To get started:
 
   `npm run start`
 
--[and then head to your browser at `localhost:3000` and it should be working.]
+-and then head to your browser at `localhost:3000` and it should be working.
 
 #### Runing the program locally in production mode
 
