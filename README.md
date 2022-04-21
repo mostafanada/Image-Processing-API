@@ -39,6 +39,6 @@ To get started:
 
 I'm using prettier and eslint
 
-    `npm run prettier`
-    
-    `npm run lint`
+    npm run prettier
+
+    npm run lint
