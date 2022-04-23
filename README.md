@@ -1,23 +1,72 @@
 ## Getting Started
 
-This repo contains a basic Node and Express app in **Typescript**  to get you started in constructing an API.
+This repo contains a basic resize for image app in **Typescript** in an API.
+
 
 ## Prerequisites Technologies
 
 Your must install the following in order to use the project:
 - [Node & NPM](https://nodejs.org/en/download/)
 - [Typescript](https://www.npmjs.com/package/typescript) (install it globally)
+- [Jasmine](https://www.npmjs.com/package/jasmine)
 
 ## Setup Steps
-To get started, clone this repo and open your terminal at the project root.
+To get started:
 
-and then in your terminal run:
-1. `npm install`
-2. `cp .env.example .env`
-2. `npm start`
+1-Download the zip file locally.
 
-and then head to your browser at `localhost:3000` and it should be working.
+2-using `cd` command.
 
-#### Notes
-1. To run your tests you can simply run `npm test`.
-2. You can modify your environment variables through the `.env` file.
+3-install all dependencies using **npm**.
+
+#### Runing the program locally in development mode
+
+  `npm run start`
+
+-and then head to your browser at `localhost:3000` and it should be working.
+
+#### Runing the program locally in production mode
+
+  `npm run build`
+  
+  `node dist/index.js`
+
+#### Test the app
+
+    npm run test
+ 
+#### Code formating 
+
+I'm using prettier and eslint
+
+    npm run prettier
+
+    npm run lint
+    
+    
+
+
+### Examples
+
+-Available images 
+•	encenadaport
+•	fjord
+•	icelandwaterfall
+•	palmtunnel
+•	santamonica
+
+1)`http://localhost:3000/image?filename=fjord&width=100&height=200`
+
+(retrieve the image with hight=200 and width=100 which name fjord_100_200)
+
+2)`Localhost:3000/image?filename=fj&width=100&hight=100`
+
+(retrieve the message "File isn't exist")
+
+3)`Localhost:3000/image?filename=fjod&width=100&hight=100`
+
+(retrieve the message “Please, Set valid width and height“)
+
+4)`Localhost:3000/image?filename=fjod&width=100`
+
+(retrieve the message"Please, Set valid width and height")
