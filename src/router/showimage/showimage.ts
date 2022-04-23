@@ -3,7 +3,7 @@ import express from 'express';
 import checkfile from '../../functions/checkimages';
 import resize from '../../functions/resize';
 const showimage = express.Router();
-showimage.get('/', async (req: express.Request, res: express.Response) => {
+showimage.get('/', async (req: express.Request, res: express.Response):Promise<void> => {
   try {
     const name = req.query.filename as string;
     const widthtemp = req.query.width as string;
