@@ -57,16 +57,16 @@ I'm using prettier and eslint
 
 1)`http://localhost:3000/image?filename=fjord&width=100&height=200`
 
-(retrieve the image with hight=200 and width=100 which name fjord_100_200)
+return the image with hight=200 and width=100 which name fjord_100_200
 
 2)`Localhost:3000/image?filename=fj&width=100&hight=100`
 
-(retrieve the message "File isn't exist")
+return the message "File isn't exist"
 
 3)`Localhost:3000/image?filename=fjod&width=100&hight=100`
 
-(retrieve the message “Please, Set valid width and height“)
+return the message “Please, Set valid width and height“
 
 4)`Localhost:3000/image?filename=fjod&width=100`
 
-(retrieve the message"Please, Set valid width and height")
+return the message"Please, Set valid width and height"
