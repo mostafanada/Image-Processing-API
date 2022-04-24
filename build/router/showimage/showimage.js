@@ -49,7 +49,7 @@ showimage.get('/', function (req, res) { return __awaiter(void 0, void 0, void 0
     return __generator(this, function (_a) {
         switch (_a.label) {
             case 0:
-                _a.trys.push([0, 8, , 9]);
+                _a.trys.push([0, 10, , 11]);
                 name_1 = req.query.filename;
                 widthtemp = req.query.width;
                 heighttemp = req.query.height;
@@ -59,34 +59,42 @@ showimage.get('/', function (req, res) { return __awaiter(void 0, void 0, void 0
                 tempFilePath = void 0;
                 if (!!(0, checkimages_1.default)("".concat(name_1, ".jpg"), 'oreg')) return [3 /*break*/, 1];
                 res.send("File isn't exist");
-                return [3 /*break*/, 7];
+                return [3 /*break*/, 9];
             case 1:
                 if (!(req.query.width === undefined &&
                     req.query.height === undefined)) return [3 /*break*/, 2];
                 res.sendFile(path_1.default.resolve("images/oreg/".concat(name_1, ".jpg")));
-                return [3 /*break*/, 7];
+                return [3 /*break*/, 9];
             case 2:
-                if (!(isNaN(width) || isNaN(height))) return [3 /*break*/, 3];
-                res.send('Please, Set valid width and height');
-                return [3 /*break*/, 7];
+                if (!(width > 0 && req.query.height === undefined || height > 0 && req.query.width === undefined)) return [3 /*break*/, 3];
+                res.send('Please, one prameter is missing');
+                return [3 /*break*/, 9];
             case 3:
-                if (!(0, checkimages_1.default)(tempFileName, 'temp')) return [3 /*break*/, 4];
-                tempFilePath = path_1.default.resolve("images/temp/".concat(tempFileName));
-                return [3 /*break*/, 6];
-            case 4: return [4 /*yield*/, (0, resize_1.default)(name_1, width, height)];
+                if (!(isNaN(width) || isNaN(height))) return [3 /*break*/, 4];
+                res.send('Please, Set valid width and height');
+                return [3 /*break*/, 9];
+            case 4:
+                if (!(width <= 0 || height <= 0)) return [3 /*break*/, 5];
+                res.send('Please, Set valid width and height');
+                return [3 /*break*/, 9];
             case 5:
+                if (!(0, checkimages_1.default)(tempFileName, 'temp')) return [3 /*break*/, 6];
+                tempFilePath = path_1.default.resolve("images/temp/".concat(tempFileName));
+                return [3 /*break*/, 8];
+            case 6: return [4 /*yield*/, (0, resize_1.default)(name_1, width, height)];
+            case 7:
                 tempFilePath = _a.sent();
                 tempFilePath = path_1.default.resolve(tempFilePath);
-                _a.label = 6;
-            case 6:
-                res.sendFile(tempFilePath);
-                _a.label = 7;
-            case 7: return [3 /*break*/, 9];
+                _a.label = 8;
             case 8:
+                res.sendFile(tempFilePath);
+                _a.label = 9;
+            case 9: return [3 /*break*/, 11];
+            case 10:
                 err_1 = _a.sent();
                 console.error(err_1);
-                return [3 /*break*/, 9];
-            case 9: return [2 /*return*/];
+                return [3 /*break*/, 11];
+            case 11: return [2 /*return*/];
         }
     });
 }); });

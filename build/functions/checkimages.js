@@ -3,6 +3,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+// import express from 'express';
 var path_1 = __importDefault(require("path"));
 var fs_1 = require("fs");
 var filecheck = function (filename, folder) {
